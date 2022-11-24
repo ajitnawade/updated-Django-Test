@@ -1,0 +1,30 @@
+.tile{
+    border: 2px solid black;
+    box-shadow: 10px 10px 5px grey;
+    padding: 3rem;
+    margin: 5rem;
+}
+.Projheading{
+    margin: 100px;
+}
+td,th,tr,table
+{
+    text-align: center;
+}
+
+.Login_form{
+    border: 2px solid rgb(155, 154, 154);
+    box-shadow: 10px 10px 10px grey;
+    text-align: center;
+    padding: 5rem;
+}
+.login_heading{
+    margin-bottom: 2rem;
+}
+
+.table_header
+{
+    border: 2px solid rgb(131, 131, 131);
+    padding: .5rem;
+    text-align: center;
+}

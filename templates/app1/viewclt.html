@@ -1,0 +1,73 @@
+{% extends 'app1/base.html' %}
+{%  block title %}View Client{% endblock %}
+
+{% block body %}
+<div class="row">
+  <div class="col-3"></div>
+  <div class="col-7">
+    <h1 class="table_header ">View</h1>
+  </div>
+</div>
+    
+    <center>
+    <div class="col-sm-7 offset-1" class="d-inline">
+        {%  if clt %}
+        <table class="table caption-top">
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Client_name</th>
+                <th scope="col">createdat</th>
+                <th scope="col">updateat</th>
+                <th scope="col">createdby</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">{{clt.id}}</th>
+                <td>{{clt.client_name}}</td>
+                <td>{{clt.createdat}}</td>
+                <td>{{clt.updateat}}</td>
+                <td>{{clt.createdby}}</td>
+              </tr>
+            </tbody>
+          </table>
+    
+        {% else  %}
+            <h4 class="text-center alert alert-warning">No Records</h4>
+        {% endif %}
+
+
+        {% if proj %}
+        <div class="row">
+          <div class=""></div>
+          <div class="col">
+            <h1 class="table_header">Projects</h1>
+          </div>
+        </div>
+        <table class="table caption-top">
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Project Name</th>
+                <th scope="col">View Project Details</th>
+              </tr>
+            </thead>
+            <tbody>
+                {% for pro in proj %}
+              <tr>
+                <th scope="row">{{pro.id}}</th>
+                <td>{{pro.project_name}}</td>
+                <td><a href="{% url 'project_details' pro.id %}">view</a></td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+
+        {% else %}
+                    <h4 class="text-center alert alert-warning">No Projects</h4>
+        {% endif %}
+
+        <a href="{% url 'addclt' %}">Back To home</a>
+      </center>
+{% endblock %}

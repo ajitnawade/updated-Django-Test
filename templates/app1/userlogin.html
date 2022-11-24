@@ -1,0 +1,19 @@
+{% extends 'app1/base.html' %}
+{%  block title %}User Login{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4 Login_form">
+            <h1 class="login_heading">User Login</h1>
+        
+            <form action="" method="POST">
+                {% csrf_token %}
+                {{form.as_p}}
+                <input type="submit" class ="btn btn-success" value="Login">
+            </form>
+        </div>
+    </div>
+    </div>
+{% endblock %}

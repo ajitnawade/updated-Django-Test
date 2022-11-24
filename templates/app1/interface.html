@@ -1,0 +1,24 @@
+{% extends 'app1/base.html' %}
+{%load static %}
+{%  block title %}Who Are You???{% endblock %}
+
+{% block body %}
+    <div class="container row" >
+        <div class="col tile">
+            <center>
+                <a href="{% url 'adminlogin' %}">
+                    <img src="{% static 'images/admin.png' %}" alt="" height="300px" style="display: block;">
+                    <h3>admin</h3>
+                </a>
+            </center>
+        </div>
+        <div class="col tile">
+            <center>
+                <a href="{% url 'userlogin' %}">
+                    <img src="{% static 'images/user.png' %}" alt="" height="300px" style="display: block;">
+                     <h3>user</h3>
+                </a>
+            </center>
+        </div>
+    </div>
+{% endblock %}

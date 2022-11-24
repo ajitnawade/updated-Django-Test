@@ -1,0 +1,41 @@
+{% extends 'app1/base.html' %}
+{%  block title %}View Project Details{% endblock %}
+
+{% block body %}
+{% if dtl %}
+        <div class="row">
+          <div class=""></div>
+          <div class="col">
+            <h1 class="table_header">Project Name : {{ dtl.project_name }}</h1>
+          </div>
+        </div>
+        <table class="table caption-top" style="margin-top: 1rem;">
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Working Persons</th>
+                <th scope="col">Client Name</th>
+                <th scope="col">Created On</th>
+                <th scope="col">Last Updated</th>
+                <th scope="col">Created By</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">{{dtl.id}}</th>
+                <td>{{ dtl.users_info }}</td>
+                <td>{{ dtl.client }}</td>
+                <td>{{ dtl.createdat }}</td>
+                <td>{{ dtl.updateat }}</td>
+                <td>{{ dtl.createdby }}</td>
+              </tr>
+            </tbody>
+          </table>
+
+        {% else %}
+                    <h4 class="text-center alert alert-warning">No Projects</h4>
+        {% endif %}
+
+        <center><a href="{% url 'addclt' %}">Back To Home</a></center>
+
+{% endblock %}
